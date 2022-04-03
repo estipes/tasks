@@ -83,7 +83,7 @@ export function ChangeColor(): JSX.Element {
                     data-testid="colored-box"
                     style={{ backgroundColor: color }}
                 >
-                    {color}.
+                    {color} on.
                 </Form.Label>
             </Form.Group>
         </div>

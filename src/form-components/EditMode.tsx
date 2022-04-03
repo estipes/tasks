@@ -7,28 +7,32 @@ export function EditMode(): JSX.Element {
     const [inEditMode, setEditMode] = useState<boolean>(false);
     return (
         <div>
-            <Form.Group controlId="formEditMode">
-                <Form.Label>
-                    {name} is {isStudent ? "a student" : "is not a student"}
-                </Form.Label>
-                <Form.Control
-                    disabled={inEditMode === false}
-                    type="string"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <Form.Check
-                    disabled={inEditMode === false}
-                    type="switch"
-                    name="setStudent"
-                    onChange={() => setStudent(!isStudent)}
-                ></Form.Check>
-                <Form.Check
-                    type="switch"
-                    name="setEditMode"
-                    onChange={() => setEditMode(!inEditMode)}
-                ></Form.Check>
-            </Form.Group>
+            <Form.Check
+                type="switch"
+                name="setEditMode"
+                onChange={() => setEditMode(!inEditMode)}
+            ></Form.Check>
+            <Form.Label>
+                {name} is {isStudent ? "a student" : "not a student"}
+            </Form.Label>
+            {inEditMode && (
+                <Form.Group controlId="formEditMode">
+                    <Form.Control
+                        type="string"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        disabled={!inEditMode}
+                    />
+                    <Form.Check
+                        type="checkbox"
+                        id="is-student-check"
+                        label="student?"
+                        checked={isStudent}
+                        onChange={() => setStudent(!isStudent)}
+                        disabled={!inEditMode}
+                    ></Form.Check>
+                </Form.Group>
+            )}
         </div>
     );
 }

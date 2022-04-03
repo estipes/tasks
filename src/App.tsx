@@ -24,7 +24,7 @@ function App(): JSX.Element {
                 Hello World. UD CISC275 with React Hooks and TypeScript. Ethan
                 Stipes.
             </header>
-            <h1>Otter Heading Should Be Working.</h1>
+            <h2>Otter Heading Should Be Working.</h2>
             <Container>
                 <Row>
                     <Col>
