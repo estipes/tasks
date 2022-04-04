@@ -38,7 +38,6 @@ export function ShoveBox(): JSX.Element {
     const [position, setPosition] = useState<number>(10);
     return (
         <div>
-            <h3>Shove Box</h3>
             <span>The box is at: {position}</span>
             <div>
                 <ShoveBoxButton
